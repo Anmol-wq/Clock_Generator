@@ -1,5 +1,5 @@
 # Multi-phase Non-overlapping Clock Generator
-- This is a submission in lieu successful completion of following through simulating the proposed circuit as a result of literature survey conducted before for SFAL Recruitment Hackathon Drive conducted by VLSI System Design Corp. 
+- This is a submission in lieu of successful completion of following through simulating the proposed circuit as a result of literature survey conducted, for SFAL Recruitment Hackathon Drive conducted by VLSI System Design Corp. 
 
 - The aforementioned literature survey can be referred here in the repository, and the .cir file for doing the SPICE simulations can be found here, as well.
 
@@ -318,8 +318,8 @@ plot vclkout1 vclkout2+4 vclkout3+8 vclkout4+12 vclk+16
 
 ### Troubleshooting 
 
-- Firstly, sizing was thought to be culprit, rspecially for NAND gate and inverter string. 
-- After a few iterations, the results remained unchanged. Went a level lower, to look at the schematic, the culprit was found to be the input of NAND, being provided to the flop ahead instead of the output of the NAND gate. Made changes. Worked.
+- Firstly, sizing was thought to be culprit, especially for the NAND gate and the inverter strings. 
+- After a few iterations, the results remained unchanged. Went a level lower, to look at the schematic, the culprit was found to be the input of NAND, being provided to the flop ahead instead of the output of the NAND gate. Rectifying that helped.
 
 ## Steps to Reproduce waveforms
 
@@ -347,11 +347,11 @@ The final limitation, thus, leads to scope of improvement in design, to achieve 
 
 - [Deepak Verma, "vsdsram_sky130”](https://github.com/Deepak42074/vsdsram_sky130)
 
-- [Sameer Durgoji, Kunal Ghosh, "VSD Intern - 10-bit DAC design using eSim and Sky130"] (https://www.udemy.com/course/vsd-intern-10-bit-dac-design-using-esim-and-sky130/)
+- [Sameer Durgoji, Kunal Ghosh, "VSD Intern - 10-bit DAC design using eSim and Sky130"](https://www.udemy.com/course/vsd-intern-10-bit-dac-design-using-esim-and-sky130/)
 
 - [Weste, Neil, Harris, David. "CMOS VLSI Design: A Circuits and Systems Perspective, 4th Edition"](https://www.amazon.in/CMOS-VLSI-Design-Circuits-Perspective/dp/0321547748)
 
-## Acknowledgement
+## Acknowledgements
 
 - [Kunal Ghosh](https://github.com/kunalg123), Co-founder of VLSI System Design (VSD) Corp. Pvt. Ltd.
 - [SFAL COE, Karnataka](https://www.sfalcoe.com/)
@@ -361,9 +361,9 @@ The final limitation, thus, leads to scope of improvement in design, to achieve 
 ## Author
 
 [Anmol Saxena](https://github.com/Anmol-wq/), M.Tech ICT (2019-21), DA-IICT, Gandhinagar, Gujarat, India
-- Contact: anmol.saxena2016@outlook.com, 201911053@daiict.ac.in
-- System configuration during the undertaking: 
--- Processor: Intel(R) Core(TM) i5-5300U CPU @ 2.30GHz   
--- Installed RAM: 8.00 GB (7.88 GB usable)
--- System type:	Windows 10 Pro, 64-bit operating system, x64-based processor
+- Contact: anmol.saxena2016@outlook.com, 201911053@daiict.ac.in  <br>\
+- System configuration during the undertaking:  <br>\
+-- Processor: Intel(R) Core(TM) i5-5300U CPU @ 2.30GHz   <br>\
+-- Installed RAM: 8.00 GB (7.88 GB usable)  <br>\
+-- System type:	Windows 10 Pro, 64-bit operating system, x64-based processor  <br>\
 
