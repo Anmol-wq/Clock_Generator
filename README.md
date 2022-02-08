@@ -1,5 +1,5 @@
 # Multi-phase Non-overlapping Clock Generator
-- This is a submission in lieu of successful completion of following through simulating the proposed circuit as a result of literature survey conducted, for [SFAL Recruitment Hackathon Drive](https://www.sfalcoe.com/sfal_hackathon-recruitment-drive/).
+- This is a submission repo for successful completion of following through simulating the proposed circuit as a result of literature survey conducted, for [SFAL Recruitment Hackathon Drive](https://www.sfalcoe.com/sfal_hackathon-recruitment-drive/).
 
 - The aforementioned literature survey can be referred [here](https://github.com/Anmol-wq/Clock_Generator/blob/main/Anmol_Saxena_literature_survey_report.pdf) in the repository, and the .cir file for doing the SPICE simulations can be found [here](https://github.com/Anmol-wq/Clock_Generator/blob/main/clockgen2.cir), as well.
 
