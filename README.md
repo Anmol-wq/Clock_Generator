@@ -9,16 +9,16 @@
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Reference Circuit Diagram](#reference)
-- [Implemented Circuit Details](#implementation)
-- [Schematic Diagram and Waveform](#schematic)
+- [Reference](#reference)
+- [Implementation](#implementation)
+- [Schematic_Netlist_Waveform](#schematic_netlist_waveform)
 - [Methodology](#methodology)
-- [Challenge faced](#challenge)
+- [Challenge](#challenge)
 - [Troubleshooting](#troubleshooting)
-- [Steps to Reproduce waveforms](#steps)
+- [Reproduce_waveforms](#reproduce_waveforms)
 - [Limitations](#limitations)
 - [References](#references)
-- [Acknowledgements](#acknowledgement)
+- [Acknowledgements](#acknowledgements)
 - [Author](#author)
 
 ## Introduction
