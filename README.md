@@ -11,7 +11,7 @@
 - [Introduction](#introduction)
 - [Reference Circuit Diagram](#reference-circuit-diagram)
 - [Implemented Circuit Details](#implementation)
-- [Schematic Diagram and Waveform](#schematic-diagram)
+- [Schematic Diagram and Waveform](#schematic-diagram-waveform)
 - [Methodology](#methodology)
 - [Challenge faced](#challenge)
 - [Troubleshooting](#troubleshooting)
