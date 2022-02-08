@@ -1,11 +1,11 @@
 # Multi-phase Non-overlapping Clock Generator
 - This is a submission in lieu of successful completion of following through simulating the proposed circuit as a result of literature survey conducted, for [SFAL Recruitment Hackathon Drive](https://www.sfalcoe.com/sfal_hackathon-recruitment-drive/).
 
-- The aforementioned literature survey can be referred here in the repository, and the .cir file for doing the SPICE simulations can be found here, as well.
+- The aforementioned literature survey can be referred [here](https://github.com/Anmol-wq/Clock_Generator/blob/main/Anmol_Saxena_literature_survey_report.pdf) in the repository, and the .cir file for doing the SPICE simulations can be found [here](https://github.com/Anmol-wq/Clock_Generator/blob/main/clockgen2.cir), as well.
 
 - A multiphase clock generator is a requirement for wide band multi-path transmission line filter, amongst other relevant applications. There are various implementations for the same. The purpose of this project is to implement a 4-phase non-overlapping clock generator using eSim (An open-source Electronic Design Automation tool designed by FOSSEE Project team of Indian Institute of Technology Bombay) and SkyWater 130nm PDK (Process Design Kit) sponsored by Google. It is fully digital and hence the number of parameters to be taken care is fairly less compared to its analog counterparts.
 
-- A frequency divider circuit (Divide-by-4) is realized using the D-FFs and NAND gate in the following feedback position. The inverter and buffer string further help in obtaining the output as required which are delayed through the provided D-FFs ahead for the multi-phase clock generation.  
+- A frequency divider circuit (Divide-by-4) is realized using the D-FFs and NAND gate visualized in the reference circuit below. The inverter and buffer string further help in obtaining the output as required which are delayed through the provided D-FFs ahead for the multi-phase clock generation.  
 
 ## Table of Contents
 - [Introduction](#introduction)
