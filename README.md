@@ -306,6 +306,8 @@ plot vclkout1 vclkout2+4 vclkout3+8 vclkout4+12 vclk+16
 
 ![waveform (1)](https://user-images.githubusercontent.com/73732594/153057375-934b0c11-97be-4ece-9657-3a8a871930fd.png)
 
+- We get the desired output after 4 input clock cycles as can be seen from above.
+
 
 ## Methodology
 
