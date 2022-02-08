@@ -9,7 +9,7 @@
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Reference](#reference)
+- [Reference_Circuit](#reference_circuit)
 - [Implementation](#implementation)
 - [Schematic_Netlist_Waveform](#schematic_netlist_waveform)
 - [Methodology](#methodology)
@@ -31,14 +31,14 @@
 - Open source process design kit for usage with SkyWater Technology Foundry's 130nm node, [Google SkyWater SKY130](https://github.com/google/skywater-pdk), is utilized here.
  
  
-## Reference Circuit Diagram
+## Reference_Circuit
 
 ![Hackathon2](https://user-images.githubusercontent.com/73732594/153037798-73c62c2a-b92a-4263-939f-9f9303abf294.png)
 
 Recreated the reference diagram from the [source](https://curve.carleton.ca/5ff0a03b-3cf7-42f8-ab3e-cb9a1379b43a) in Microsoft Visio 2016.
 
 
-## Implemented Circuit Details
+## Implementation
 
 - Each D-Flip Flop is a CMOS transmission-gate based implementation, and is sized uniformly with (W/L)pFET/(W/L)nFET = (0.55u/0.15u)/(0.42u/0.15u). 
 - It has total 16 transistors, thus 96 transistors for 6 flip-flops here.
@@ -52,7 +52,7 @@ Recreated the reference diagram from the [source](https://curve.carleton.ca/5ff0
 - Total transistors used = 184 (92 each n and pFETS).
 - The FET model chosen is 01v8 model from sky130 PDK.
 
-## Schematic Diagram and Waveform
+## Schematic_Netlist_Waveform
 
 ![image](https://user-images.githubusercontent.com/73732594/153049942-db725543-8855-40fc-b67f-46fca97959c1.png)
 
@@ -312,7 +312,7 @@ plot vclkout1 vclkout2+4 vclkout3+8 vclkout4+12 vclk+16
 - Each of the components: the inverter, buffer, D-FF and NAND gate were tested individually from spice netlists for each, for their functionality. The reference sizing was based on the D-FF transistor sizes. 
 - A choice between creating subcircuits of each or using them as is on schematic was there. The latter was chosen to have the transistors more accessible in the netlist file and then sized according to the requirements, for more flexibility. Since the design was uniform, the netlist is easy to manually change the values for each transistors.
 
-## Challenge faced
+## Challenge 
 
 - Initially, the waveform acquired was having overlaps.
 
@@ -323,7 +323,7 @@ plot vclkout1 vclkout2+4 vclkout3+8 vclkout4+12 vclk+16
 - Firstly, sizing was thought to be culprit, especially for the NAND gate and the inverter strings. 
 - After a few iterations, the results remained unchanged. Went a level lower, to look at the schematic, the culprit was found to be the input of NAND, being provided to the flop ahead instead of the output of the NAND gate. Rectifying that helped.
 
-## Steps to Reproduce waveforms
+## Reproduce_waveforms
 
 Here are the basic steps to re-do the simulations and see the waveforms
 
