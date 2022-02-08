@@ -31,7 +31,7 @@
  
 ## Reference Circuit Diagram
 
-                 ![Hackathon2](https://user-images.githubusercontent.com/73732594/153037798-73c62c2a-b92a-4263-939f-9f9303abf294.png)
+![Hackathon2](https://user-images.githubusercontent.com/73732594/153037798-73c62c2a-b92a-4263-939f-9f9303abf294.png)
 
 Recreated the reference diagram from the source in Microsoft Visio 2016.
 
