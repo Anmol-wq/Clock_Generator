@@ -9,16 +9,16 @@
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Reference Circuit Diagram](#reference-circuit-diagram)
+- [Reference Circuit Diagram](#reference)
 - [Implemented Circuit Details](#implementation)
-- [Schematic Diagram and Waveform](#schematic-diagram-waveform)
+- [Schematic Diagram and Waveform](#schematic)
 - [Methodology](#methodology)
 - [Challenge faced](#challenge)
 - [Troubleshooting](#troubleshooting)
-- [Steps to Reproduce waveforms](#steps-to-reproduce-waveforms)
+- [Steps to Reproduce waveforms](#steps)
 - [Limitations](#limitations)
 - [References](#references)
-- [Acknowledgement](#acknowledgement)
+- [Acknowledgements](#acknowledgement)
 - [Author](#author)
 
 ## Introduction
@@ -35,7 +35,7 @@
 
 ![Hackathon2](https://user-images.githubusercontent.com/73732594/153037798-73c62c2a-b92a-4263-939f-9f9303abf294.png)
 
-Recreated the reference diagram from the source in Microsoft Visio 2016.
+Recreated the reference diagram from the [source](https://curve.carleton.ca/5ff0a03b-3cf7-42f8-ab3e-cb9a1379b43a) in Microsoft Visio 2016.
 
 
 ## Implemented Circuit Details
