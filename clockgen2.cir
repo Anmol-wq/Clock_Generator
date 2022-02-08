@@ -1,0 +1,234 @@
+* Path for cir file: C:\Users\DELL\Desktop\EL519\pre-layout\clockgen2.cir
+* Path for sky130_fd_pr: C:\Users\DELL\Desktop\EL519\pre-layout\sky130_fd_pr
+
+.param temp = 27
+.param supl = 3.3V
+
+.lib "sky130_fd_pr/Models/sky130.lib.spice" tt
+
+Vdd vdd 0 {supl}
+* Sheet Name: /
+xM6  Net-_xM3-Pad1_ vclkb Net-_xM11-Pad2_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM5  Net-_xM3-Pad1_ vclk Net-_xM11-Pad2_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM8  Net-_xM11-Pad2_ vclk Net-_xM10-Pad1_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM7  Net-_xM11-Pad2_ vclkb Net-_xM10-Pad1_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM11  Net-_xM10-Pad2_ Net-_xM11-Pad2_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM12  Net-_xM10-Pad2_ Net-_xM11-Pad2_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42
+
+* Input Clock circuit		
+xM1  vclkb vclk vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM2  vclkb vclk GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42
+		
+xM9  Net-_xM10-Pad1_ Net-_xM10-Pad2_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM10  Net-_xM10-Pad1_ Net-_xM10-Pad2_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM14  Net-_xM10-Pad2_ vclk Net-_xM13-Pad3_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM13  Net-_xM10-Pad2_ vclkb Net-_xM13-Pad3_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM16  Net-_xM13-Pad3_ vclkb Net-_xM15-Pad3_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM15  Net-_xM13-Pad3_ vclk Net-_xM15-Pad3_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM19  Net-_xM17-Pad2_ Net-_xM13-Pad3_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM20  Net-_xM17-Pad2_ Net-_xM13-Pad3_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM17  Net-_xM15-Pad3_ Net-_xM17-Pad2_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM18  Net-_xM15-Pad3_ Net-_xM17-Pad2_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42
+
+*Initial Inverter				
+xM3  Net-_xM3-Pad1_ Net-_xM3-Pad2_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM4  Net-_xM3-Pad1_ Net-_xM3-Pad2_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42
+		
+xM22  Net-_xM17-Pad2_ vclkb Net-_xM21-Pad3_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM21  Net-_xM17-Pad2_ vclk Net-_xM21-Pad3_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM24  Net-_xM21-Pad3_ vclk Net-_xM23-Pad3_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM23  Net-_xM21-Pad3_ vclkb Net-_xM23-Pad3_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM27  Net-_xM25-Pad2_ Net-_xM21-Pad3_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM28  Net-_xM25-Pad2_ Net-_xM21-Pad3_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM25  Net-_xM23-Pad3_ Net-_xM25-Pad2_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM26  Net-_xM23-Pad3_ Net-_xM25-Pad2_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM30  Net-_xM25-Pad2_ vclk Net-_xM29-Pad3_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM29  Net-_xM25-Pad2_ vclkb Net-_xM29-Pad3_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM32  Net-_xM29-Pad3_ vclkb Net-_xM31-Pad3_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM31  Net-_xM29-Pad3_ vclk Net-_xM31-Pad3_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM35  Net-_xM3-Pad2_ Net-_xM29-Pad3_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM36  Net-_xM3-Pad2_ Net-_xM29-Pad3_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM33  Net-_xM31-Pad3_ Net-_xM3-Pad2_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM34  Net-_xM31-Pad3_ Net-_xM3-Pad2_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42
+
+* NAND Gate		
+xM37  Net-_xM37-Pad1_ Net-_xM3-Pad2_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.3 w=1.1		
+xM38  Net-_xM37-Pad1_ Net-_xM17-Pad2_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.3 w=1.1		
+xM39  Net-_xM37-Pad1_ Net-_xM3-Pad2_ GND GND sky130_fd_pr__nfet_01v8 l=0.3 w=1.1		
+xM40  Net-_xM37-Pad1_ Net-_xM17-Pad2_ GND GND sky130_fd_pr__nfet_01v8 l=0.3 w=1.1		
+
+xM42  Net-_xM37-Pad1_ vclkb Net-_xM41-Pad3_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM41  Net-_xM37-Pad1_ vclk Net-_xM41-Pad3_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM44  Net-_xM41-Pad3_ vclk Net-_xM43-Pad3_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM43  Net-_xM41-Pad3_ vclkb Net-_xM43-Pad3_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM47  Net-_xM45-Pad2_ Net-_xM41-Pad3_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM48  Net-_xM45-Pad2_ Net-_xM41-Pad3_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM45  Net-_xM43-Pad3_ Net-_xM45-Pad2_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM46  Net-_xM43-Pad3_ Net-_xM45-Pad2_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM50  Net-_xM45-Pad2_ vclk Net-_xM49-Pad3_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM49  Net-_xM45-Pad2_ vclkb Net-_xM49-Pad3_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM52  Net-_xM49-Pad3_ vclkb Net-_xM51-Pad3_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM51  Net-_xM49-Pad3_ vclk Net-_xM51-Pad3_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM55  Net-_xM53-Pad2_ Net-_xM49-Pad3_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM56  Net-_xM53-Pad2_ Net-_xM49-Pad3_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM53  Net-_xM51-Pad3_ Net-_xM53-Pad2_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM54  Net-_xM51-Pad3_ Net-_xM53-Pad2_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42
+
+* Inverter string		
+xM57  Net-_xM57-Pad1_ Net-_xM53-Pad2_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=1.26		
+xM58  Net-_xM57-Pad1_ Net-_xM53-Pad2_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM59  Net-_xM59-Pad1_ Net-_xM57-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.42		
+xM60  Net-_xM59-Pad1_ Net-_xM57-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM61  Net-_xM61-Pad1_ Net-_xM59-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=1.26		
+xM62  Net-_xM61-Pad1_ Net-_xM59-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM63  Net-_xM63-Pad1_ Net-_xM61-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.42		
+xM64  Net-_xM63-Pad1_ Net-_xM61-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42
+
+* Buffer string		
+xM65  Net-_xM65-Pad1_ Net-_xM63-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM66  Net-_xM65-Pad1_ Net-_xM63-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM67  Net-_xM67-Pad1_ Net-_xM65-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM68  Net-_xM67-Pad1_ Net-_xM65-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM69  Net-_xM69-Pad1_ Net-_xM67-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.75 w=2.75		
+xM70  Net-_xM69-Pad1_ Net-_xM67-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.75 w=2.10		
+xM71  Net-_xM71-Pad1_ Net-_xM69-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.75 w=2.75		
+xM72  Net-_xM71-Pad1_ Net-_xM69-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.75 w=2.10		
+xM73  Net-_xM73-Pad1_ Net-_xM71-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=3.75 w=13.75		
+xM74  Net-_xM73-Pad1_ Net-_xM71-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=3.75 w=10.5		
+xM75  vclkout1 Net-_xM73-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=3.75 w=13.75		
+xM76  vclkout1 Net-_xM73-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=3.75 w=10.5	
+
+* D-FF	
+xM78  Net-_xM53-Pad2_ vclkb Net-_xM77-Pad3_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM77  Net-_xM53-Pad2_ vclk Net-_xM77-Pad3_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM80  Net-_xM77-Pad3_ vclk Net-_xM79-Pad3_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM79  Net-_xM77-Pad3_ vclkb Net-_xM79-Pad3_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM83  Net-_xM81-Pad2_ Net-_xM77-Pad3_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM84  Net-_xM81-Pad2_ Net-_xM77-Pad3_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM81  Net-_xM79-Pad3_ Net-_xM81-Pad2_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM82  Net-_xM79-Pad3_ Net-_xM81-Pad2_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM86  Net-_xM81-Pad2_ vclk Net-_xM85-Pad3_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM85  Net-_xM81-Pad2_ vclkb Net-_xM85-Pad3_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM88  Net-_xM85-Pad3_ vclkb Net-_xM87-Pad3_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM87  Net-_xM85-Pad3_ vclk Net-_xM87-Pad3_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM91  Net-_xM113-Pad1_ Net-_xM85-Pad3_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM92  Net-_xM113-Pad1_ Net-_xM85-Pad3_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM89  Net-_xM87-Pad3_ Net-_xM113-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM90  Net-_xM87-Pad3_ Net-_xM113-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42
+
+* Inverter string		
+xM93  Net-_xM93-Pad1_ Net-_xM113-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=1.26		
+xM94  Net-_xM93-Pad1_ Net-_xM113-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM95  Net-_xM95-Pad1_ Net-_xM93-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.42		
+xM96  Net-_xM95-Pad1_ Net-_xM93-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM97  Net-_xM100-Pad2_ Net-_xM95-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=1.26		
+xM98  Net-_xM100-Pad2_ Net-_xM95-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM99  Net-_xM100-Pad1_ Net-_xM100-Pad2_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.42		
+xM100  Net-_xM100-Pad1_ Net-_xM100-Pad2_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42
+
+*Buffer string		
+xM101  Net-_xM101-Pad1_ Net-_xM100-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM102  Net-_xM101-Pad1_ Net-_xM100-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM103  Net-_xM103-Pad1_ Net-_xM101-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM104  Net-_xM103-Pad1_ Net-_xM101-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM105  Net-_xM105-Pad1_ Net-_xM103-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.75 w=2.75		
+xM106  Net-_xM105-Pad1_ Net-_xM103-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.75 w=2.10		
+xM107  Net-_xM107-Pad1_ Net-_xM105-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.75 w=2.75		
+xM108  Net-_xM107-Pad1_ Net-_xM105-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.75 w=2.10		
+xM109  Net-_xM109-Pad1_ Net-_xM107-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=3.75 w=13.75		
+xM110  Net-_xM109-Pad1_ Net-_xM107-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=3.75 w=10.5		
+xM111  vclkout2 Net-_xM109-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=3.75 w=13.75		
+xM112  vclkout2 Net-_xM109-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=3.75 w=10.5
+
+* D-FF		
+xM114  Net-_xM113-Pad1_ vclkb Net-_xM113-Pad3_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM113  Net-_xM113-Pad1_ vclk Net-_xM113-Pad3_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM116  Net-_xM113-Pad3_ vclk Net-_xM115-Pad3_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM115  Net-_xM113-Pad3_ vclkb Net-_xM115-Pad3_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM119  Net-_xM117-Pad2_ Net-_xM113-Pad3_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM120  Net-_xM117-Pad2_ Net-_xM113-Pad3_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM117  Net-_xM115-Pad3_ Net-_xM117-Pad2_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM118  Net-_xM115-Pad3_ Net-_xM117-Pad2_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM122  Net-_xM117-Pad2_ vclk Net-_xM121-Pad3_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM121  Net-_xM117-Pad2_ vclkb Net-_xM121-Pad3_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM124  Net-_xM121-Pad3_ vclkb Net-_xM123-Pad3_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM123  Net-_xM121-Pad3_ vclk Net-_xM123-Pad3_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM127  Net-_xM125-Pad2_ Net-_xM121-Pad3_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM128  Net-_xM125-Pad2_ Net-_xM121-Pad3_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM125  Net-_xM123-Pad3_ Net-_xM125-Pad2_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM126  Net-_xM123-Pad3_ Net-_xM125-Pad2_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42
+
+* Inverter string		
+xM129  Net-_xM129-Pad1_ Net-_xM125-Pad2_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=1.26		
+xM130  Net-_xM129-Pad1_ Net-_xM125-Pad2_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM131  Net-_xM131-Pad1_ Net-_xM129-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.42		
+xM132  Net-_xM131-Pad1_ Net-_xM129-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM133  Net-_xM133-Pad1_ Net-_xM131-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=1.26		
+xM134  Net-_xM133-Pad1_ Net-_xM131-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM135  Net-_xM135-Pad1_ Net-_xM133-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.42		
+xM136  Net-_xM135-Pad1_ Net-_xM133-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42
+
+* Buffer string		
+xM137  Net-_xM137-Pad1_ Net-_xM135-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM138  Net-_xM137-Pad1_ Net-_xM135-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM139  Net-_xM139-Pad1_ Net-_xM137-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM140  Net-_xM139-Pad1_ Net-_xM137-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM141  Net-_xM141-Pad1_ Net-_xM139-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.75 w=2.75		
+xM142  Net-_xM141-Pad1_ Net-_xM139-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.75 w=2.10		
+xM143  Net-_xM143-Pad1_ Net-_xM141-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.75 w=2.75		
+xM144  Net-_xM143-Pad1_ Net-_xM141-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.75 w=2.10		
+xM145  Net-_xM145-Pad1_ Net-_xM143-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=3.75 w=13.75		
+xM146  Net-_xM145-Pad1_ Net-_xM143-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=3.75 w=10.5		
+xM147  vclkout3 Net-_xM145-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=3.75 w=13.75		
+xM148  vclkout3 Net-_xM145-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=3.75 w=10.5	
+
+* D-FF	
+xM150  Net-_xM125-Pad2_ vclkb Net-_xM149-Pad3_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM149  Net-_xM125-Pad2_ vclk Net-_xM149-Pad3_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM152  Net-_xM149-Pad3_ vclk Net-_xM151-Pad3_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM151  Net-_xM149-Pad3_ vclkb Net-_xM151-Pad3_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM155  Net-_xM153-Pad2_ Net-_xM149-Pad3_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM156  Net-_xM153-Pad2_ Net-_xM149-Pad3_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM153  Net-_xM151-Pad3_ Net-_xM153-Pad2_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM154  Net-_xM151-Pad3_ Net-_xM153-Pad2_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM158  Net-_xM153-Pad2_ vclk Net-_xM157-Pad3_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM157  Net-_xM153-Pad2_ vclkb Net-_xM157-Pad3_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM160  Net-_xM157-Pad3_ vclkb Net-_xM159-Pad3_ GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM159  Net-_xM157-Pad3_ vclk Net-_xM159-Pad3_ vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM163  Net-_xM161-Pad2_ Net-_xM157-Pad3_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM164  Net-_xM161-Pad2_ Net-_xM157-Pad3_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM161  Net-_xM159-Pad3_ Net-_xM161-Pad2_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM162  Net-_xM159-Pad3_ Net-_xM161-Pad2_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42
+
+* Inverter string		
+xM165  Net-_xM165-Pad1_ Net-_xM161-Pad2_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=1.26		
+xM166  Net-_xM165-Pad1_ Net-_xM161-Pad2_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM167  Net-_xM167-Pad1_ Net-_xM165-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.42		
+xM168  Net-_xM167-Pad1_ Net-_xM165-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM169  Net-_xM169-Pad1_ Net-_xM167-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=1.26		
+xM170  Net-_xM169-Pad1_ Net-_xM167-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM171  Net-_xM171-Pad1_ Net-_xM169-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.42		
+xM172  Net-_xM171-Pad1_ Net-_xM169-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42
+
+* Buffer string		
+xM173  Net-_xM173-Pad1_ Net-_xM171-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM174  Net-_xM173-Pad1_ Net-_xM171-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM175  Net-_xM175-Pad1_ Net-_xM173-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.15 w=0.55		
+xM176  Net-_xM175-Pad1_ Net-_xM173-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.15 w=0.42		
+xM177  Net-_xM177-Pad1_ Net-_xM175-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.75 w=2.75		
+xM178  Net-_xM177-Pad1_ Net-_xM175-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.75 w=2.1		
+xM179  Net-_xM179-Pad1_ Net-_xM177-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=0.75 w=2.75		
+xM180  Net-_xM179-Pad1_ Net-_xM177-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=0.75 w=2.1		
+xM181  Net-_xM181-Pad1_ Net-_xM179-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=3.75 w=13.75		
+xM182  Net-_xM181-Pad1_ Net-_xM179-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=3.75 w=10.5		
+xM183  vclkout4 Net-_xM181-Pad1_ vdd vdd sky130_fd_pr__pfet_01v8 l=3.75 w=13.75		
+xM184  vclkout4 Net-_xM181-Pad1_ GND GND sky130_fd_pr__nfet_01v8 l=3.75 w=10.5	
+	
+Vclk vclk 0 pulse(0 1.8 0 0.4ns 0.4ns 5us 10us)
+.tran 0.1us 300us
+
+.control
+run 
+plot vclkout1 vclkout2+4 vclkout3+8 vclkout4+12 vclk+16
+.endc
+.end
