@@ -11,7 +11,7 @@
 - [Introduction](#introduction)
 - [Reference Circuit Diagram](#reference-circuit-diagram)
 - [Implemented Circuit Details](#implementation)
-- [Schematic Diagram](#schematic-diagram)
+- [Schematic Diagram and Waveform](#schematic-diagram)
 - [Methodology](#methodology)
 - [Challenge faced](#challenge)
 - [Troubleshooting](#troubleshooting)
@@ -52,7 +52,7 @@ Recreated the reference diagram from the source in Microsoft Visio 2016.
 - Total transistors used = 184 (92 each n and pFETS).
 - The FET model chosen is 01v8 model from sky130 PDK.
 
-## Schematic Diagram
+## Schematic Diagram and Waveform
 
 ![image](https://user-images.githubusercontent.com/73732594/153049942-db725543-8855-40fc-b67f-46fca97959c1.png)
 
