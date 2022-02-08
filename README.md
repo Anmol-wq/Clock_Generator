@@ -1,0 +1,2 @@
+# Clock_Generator
+A multiphase clock generator is a requirement for wide band multi-path transmission line filter, amongst other relevant applications. There are various implementations for the same. The chosen one here is functionally adept and is verified post-layout, as well. It is fully digital and hence the number of parameters to be taken care is fairly less compared to its analog counterparts.
