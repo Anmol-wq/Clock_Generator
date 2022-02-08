@@ -325,7 +325,11 @@ plot vclkout1 vclkout2+4 vclkout3+8 vclkout4+12 vclk+16
 
 ## Reproduce_waveforms
 
-Here are the basic steps to re-do the simulations and see the waveforms
+For Windows users, 
+- Download the repository.
+- Open the .cir file with ngspice, ensuring the presence of sky_130_fd_pr folder in the same folder as .cir file.
+
+Here are the basic steps to re-do the simulations and see the waveforms on Linux.
 
 ```
 git clone https://github.com/Anmol-wq/Clock_Generator/
