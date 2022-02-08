@@ -1,75 +1,61 @@
 # Multi-phase Non-overlapping Clock Generator
-A multiphase clock generator is a requirement for wide band multi-path transmission line filter, amongst other relevant applications. There are various implementations for the same. The purpose of this project is to implement a 4-phase non-overlapping clock generator using eSim (An open-source Electronic Design Automation tool designed by FOSSEE Project team of Indian Institute of Technology Bombay) and SkyWater 130nm PDK (Process Design Kit) sponsored by Google. It is fully digital and hence the number of parameters to be taken care is fairly less compared to its analog counterparts.
+- This is a submission in lieu successful completion of following through simulating the proposed circuit as a result of literature survey conducted before for SFAL Recruitment Hackathon Drive conducted by VLSI System Design Corp. 
+
+- The aforementioned literature survey can be referred here in the repository, and the .cir file for doing the SPICE simulations can be found here, as well.
+
+- A multiphase clock generator is a requirement for wide band multi-path transmission line filter, amongst other relevant applications. There are various implementations for the same. The purpose of this project is to implement a 4-phase non-overlapping clock generator using eSim (An open-source Electronic Design Automation tool designed by FOSSEE Project team of Indian Institute of Technology Bombay) and SkyWater 130nm PDK (Process Design Kit) sponsored by Google. It is fully digital and hence the number of parameters to be taken care is fairly less compared to its analog counterparts.
 
 ## Table of Contents
 - [Introduction](#introduction)
 - [Reference Circuit Diagram](#reference-circuit-diagram)
-- [eSim EDA Tool](#esim-eda-tool)
-- [Google SkyWater PDK](#google-skywater-pdk)
+- [Implemented Circuit Details](#implementation)
 - [Schematic Diagram](#schematic-diagram)
-- [Write Opearation](#write-operation)
-- [Read Operation](#read-operation)
 - [Steps to Reproduce waveforms](#steps-to-reproduce-waveforms)
+- [Methodology](#methodology)
+- [Challenge faced](#challenge)
+- [Troubleshooting](#troubleshooting)
+- [Limitations](#limitations)
 - [References](#references)
 - [Acknowledgement](#acknowledgement)
 - [Author](#author)
 
 ## Introduction
-The circuit is a CMOS transistor-based implementation. It consists of 6 D-Flip Flops, 16 inverters: segregated in 2 types owing to their deliberate sizing for generation of non-overlapping waveforms for 4 different phases: (0°, 90°, 180° and 270°), 12 buffers with uniform tapered dimensions towards output, a NAND gate and a NOT gate. A reference clock signal is utilized for generation of desired signals. A tapered buffer is used to drive the transistor gate, which carries a large capacitive load due to the transistor’s parasitic capacitance. The output buffer design was based on using a string of inverters where each has an increasing width compare to the last. By sizing up an inverter, its delay will be reduced, and input capacitance may be increased. The number of stages in the buffer depends on the load capacitance. 
+- The circuit is a CMOS transistor-based implementation. It consists of 6 D-Flip Flops, 16 inverters: segregated in 2 types owing to their deliberate sizing for generation of non-overlapping waveforms for 4 different phases: (0°, 90°, 180° and 270°), 12 buffers with uniform tapered dimensions towards output, a NAND gate and a NOT gate. A reference clock signal is utilized for generation of desired signals. A tapered buffer is used to drive the transistor gate, which carries a large capacitive load due to the transistor’s parasitic capacitance. The output buffer design was based on using a string of inverters where each has an increasing width compare to the last. By sizing up an inverter, its delay will be reduced, and input capacitance may be increased. The number of stages in the buffer depends on the load capacitance. 
 
+- The schematic creation and the SPICE netlist generation was done using [eSim 2.1](https://esim.fossee.in/home), an open-source EDA tool.
+
+- ngSPICE 31 is used for transient simulation and waveform generation.
+
+- Open source process design kit for usage with SkyWater Technology Foundry's 130nm node, [Google SkyWater SKY130](https://github.com/google/skywater-pdk), is utilized here.
+ 
+ 
 ## Reference Circuit Diagram
 
-![Hackathon2](https://user-images.githubusercontent.com/73732594/153037798-73c62c2a-b92a-4263-939f-9f9303abf294.png)
+                 ![Hackathon2](https://user-images.githubusercontent.com/73732594/153037798-73c62c2a-b92a-4263-939f-9f9303abf294.png)
 
 Recreated the reference diagram from the source in Microsoft Visio 2016.
 
 
-### Implemented Circuit Details
+## Implemented Circuit Details
 
-Each D-Flip Flop is a CMOS transmission-gate based implementation, and is sized uniformly with (W/L)pFET/(W/L)nFET = (0.55u/0.15u)/(0.42u/0.15u). 
-It has total 16 transistors, thus 96 transistors for 6 flip-flops here.
-A inverter circuit is used separately to provide clock and inverted clock inputs for the flip flops, with the standard sizing mentioned below.
-For the inverter feeding the flop, and standard sizing for each inverter is taken to be (W/L)pFET/(W/L)nFET = (0.55u/0.15u)/(0.42u/0.15u)
-The transistors in NAND gate is sized following the sizing rules as (W/L)pFET/(W/L)nFET = (1.1u/0.3u)/(1.1u/3u)
-The inverter at the beginning of the inverter string leading to buffer string and hence clock output ports, has (W/L)pFET/(W/L)nFET = (1.26u/0.15u)/(0.42u/0.15u)
-The inverter following it has (W/L)pFET/(W/L)nFET = (0.42u/0.15u)/(0.42u/0.15u). And the same sequence is repeated again for each output path inverter string.
-The first buffer in the trio of buffers leading to output port has (W/L)pFET/(W/L)nFET = (0.55u/0.15u)/(0.42u/0.15u)
-Subsequent buffers are scaled by a multiple of 5 leading to (W/L)pFET/(W/L)nFET = (2.75u/0.75u)/(2.1u/0.75u) and (13.75u/3.75u)/(10.5u/3.75u) respectively.
-Total transistors used = 184 (92 each n and pFETS).
-The FET model chosen is 01v8 model from sky130 PDK.
-
-
-## eSim EDA Tool
-eSim is an open source EDA tool for circuit design, simulation, analysis and PCB design, developed by FOSSEE Team at IIT Bombay. It is an integrated tool build using open source softwares such as KiCad, Ngspice and GHDL.
-
-![Screenshot from 2022-02-07 13-56-27](https://user-images.githubusercontent.com/80625515/152778010-59614305-66c6-47ee-8ae5-159efffd80e7.png)
-
-![Screenshot from 2022-02-07 13-58-24](https://user-images.githubusercontent.com/80625515/152777816-1fa4c818-3180-4726-a4aa-a6b1f8d94f5e.png)
-
-### Features
-- An open-source EDA tool.
-- Perform Circuit Design.
-- Perform Simulation.
-- Perform Layout Design.
-- Model builder and Subcircuit builder.
-- Support for Mixed-Signal Simulations including Microcontrollers.
-- eSim has been successfully ported to low cost FOSSEE laptop
-- More details about eSim can be found [here](https://github.com/FOSSEE/eSim).
-
-## Google SkyWater PDK
-
-The SkyWater Open Source PDK is a collaboration between Google and SkyWater Technology Foundry to provide a fully open source Process Design Kit and related resources, which can be used to create manufacturable designs at SkyWater’s facility.
-
-![skywater-pdk-logo](https://user-images.githubusercontent.com/80625515/152778227-8a0c133c-ec8e-4f1a-96bc-2739e4689419.png)
-
-More details of SkyWater Open Source PDK can be found [here](https://github.com/google/skywater-pdk).
+- Each D-Flip Flop is a CMOS transmission-gate based implementation, and is sized uniformly with (W/L)pFET/(W/L)nFET = (0.55u/0.15u)/(0.42u/0.15u). 
+- It has total 16 transistors, thus 96 transistors for 6 flip-flops here.
+- A inverter circuit is used separately to provide clock and inverted clock inputs for the flip flops, with the standard sizing mentioned below.
+- For the inverter feeding the flop, and standard sizing for each inverter is taken to be (W/L)pFET/(W/L)nFET = (0.55u/0.15u)/(0.42u/0.15u)
+- The transistors in NAND gate is sized following the sizing rules as (W/L)pFET/(W/L)nFET = (1.1u/0.3u)/(1.1u/3u)
+- The inverter at the beginning of the inverter string leading to buffer string and hence clock output ports, has (W/L)pFET/(W/L)nFET = (1.26u/0.15u)/(0.42u/0.15u)
+- The inverter following it has (W/L)pFET/(W/L)nFET = (0.42u/0.15u)/(0.42u/0.15u). And the same sequence is repeated again for each output path inverter string.
+- The first buffer in the trio of buffers leading to output port has (W/L)pFET/(W/L)nFET = (0.55u/0.15u)/(0.42u/0.15u)
+- Subsequent buffers are scaled by a multiple of 5 leading to (W/L)pFET/(W/L)nFET = (2.75u/0.75u)/(2.1u/0.75u) and (13.75u/3.75u)/(10.5u/3.75u) respectively.
+- Total transistors used = 184 (92 each n and pFETS).
+- The FET model chosen is 01v8 model from sky130 PDK.
 
 ## Schematic Diagram
 
 ![image](https://user-images.githubusercontent.com/73732594/153049942-db725543-8855-40fc-b67f-46fca97959c1.png)
 
 
-Spice Netlist generated by eSim is modified for the above schematic using 130nm library for MOSFETs.
+- Spice Netlist generated by eSim is modified for the above schematic using 130nm library for MOSFETs.
 
 The final netlist is as follows. 
 
@@ -312,7 +298,7 @@ plot vclkout1 vclkout2+4 vclkout3+8 vclkout4+12 vclk+16
 
 ```
 
-Spice Simulation result
+### Spice Simulation result
 
 - NGSPICE Waveform
 
@@ -326,11 +312,14 @@ Spice Simulation result
 
 ## Challenge faced
 
-- Initially, the waveform acquired was having overlap.
+- Initially, the waveform acquired was having overlaps.
 
 ![image](https://user-images.githubusercontent.com/73732594/153054393-5d957cbc-d8e8-4ad8-8b0c-54af7cceabbc.png)
 
-- Troubleshoot: Firstly, sizing was thought to be culprit, rspecially for NAND gate and inverter string. After a few iterations, the results remained unchanged. Went a level lower, to look at the schematic, the culprit was found to be the input of NAND was being provided to the flop ahead instead of the output. Made changes. Worked.
+### Troubleshooting 
+
+- Firstly, sizing was thought to be culprit, rspecially for NAND gate and inverter string. 
+- After a few iterations, the results remained unchanged. Went a level lower, to look at the schematic, the culprit was found to be the input of NAND, being provided to the flop ahead instead of the output of the NAND gate. Made changes. Worked.
 
 ## Steps to Reproduce waveforms
 
@@ -358,15 +347,23 @@ The final limitation, thus, leads to scope of improvement in design, to achieve 
 
 - [Deepak Verma, "vsdsram_sky130”](https://github.com/Deepak42074/vsdsram_sky130)
 
-- [Weste, Neil, Harris, David. "CMOS VLSI Design: A Circuits and Systems Perspective, 4th Edition"]
+- [Sameer Durgoji, Kunal Ghosh, "VSD Intern - 10-bit DAC design using eSim and Sky130"] (https://www.udemy.com/course/vsd-intern-10-bit-dac-design-using-esim-and-sky130/)
+
+- [Weste, Neil, Harris, David. "CMOS VLSI Design: A Circuits and Systems Perspective, 4th Edition"](https://www.amazon.in/CMOS-VLSI-Design-Circuits-Perspective/dp/0321547748)
 
 ## Acknowledgement
 
-[Kunal Ghosh](https://github.com/kunalg123), Co-founder of VLSI System Design (VSD) Corp. Pvt. Ltd.
-[Sumanto Kar]
-[Mohammad Khalique Khan]
+- [Kunal Ghosh](https://github.com/kunalg123), Co-founder of VLSI System Design (VSD) Corp. Pvt. Ltd.
+- [SFAL COE, Karnataka](https://www.sfalcoe.com/)
+- Sumanto Kar
+- Mohammad Khalique Khan
 
 ## Author
 
 [Anmol Saxena](https://github.com/Anmol-wq/), M.Tech ICT (2019-21), DA-IICT, Gandhinagar, Gujarat, India
-- Contact: anmol.saxena2016@outlook.com
+- Contact: anmol.saxena2016@outlook.com, 201911053@daiict.ac.in
+- System configuration during the undertaking: 
+-- Processor: Intel(R) Core(TM) i5-5300U CPU @ 2.30GHz   
+-- Installed RAM: 8.00 GB (7.88 GB usable)
+-- System type:	Windows 10 Pro, 64-bit operating system, x64-based processor
+
