@@ -331,12 +331,6 @@ For Windows users,
 
 Here are the basic steps to re-do the simulations and see the waveforms on Linux.
 
-```
-git clone https://github.com/Anmol-wq/Clock_Generator/
-cd Clock_Generator
-
-ngspice clockgen2.cir
-```
 ## Limitations
 
 - The clock generator initially takes 4 input clock cycles to settle and yield the desired output waveforms.
