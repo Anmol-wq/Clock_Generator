@@ -44,7 +44,7 @@ Recreated the reference diagram from the [source](https://curve.carleton.ca/5ff0
 - It has total 16 transistors, thus 96 transistors for 6 flip-flops here.
 - An inverter circuit is used separately to provide clock and inverted clock inputs for the flip flops, with the standard sizing mentioned below.
 - For the inverter feeding the flop, and standard sizing for each inverter is taken to be (W/L)pFET/(W/L)nFET = (0.55u/0.15u)/(0.42u/0.15u)
-- The transistors in NAND gate is sized following the sizing rules as (W/L)pFET/(W/L)nFET = (1.1u/0.3u)/(1.1u/3u)
+- The transistors in NAND gate is sized following the sizing rules as (W/L)pFET/(W/L)nFET = (1.1u/0.3u)/(1.1u/0.3u)
 - The inverter at the beginning of the inverter string leading to buffer string and hence clock output ports, has (W/L)pFET/(W/L)nFET = (1.26u/0.15u)/(0.42u/0.15u)
 - The inverter following it has (W/L)pFET/(W/L)nFET = (0.42u/0.15u)/(0.42u/0.15u). And the same sequence is repeated again for each output path inverter string.
 - The first buffer in the trio of buffers leading to output port has (W/L)pFET/(W/L)nFET = (0.55u/0.15u)/(0.42u/0.15u)
